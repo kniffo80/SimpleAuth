@@ -121,10 +121,8 @@ class EventListener implements Listener{
 	 */
 	public function onPlayerMove(PlayerMoveEvent $event){
 		if(!$this->plugin->isPlayerAuthenticated($event->getPlayer())){
-			if(!$event->getPlayer()->hasPermission("simpleauth.move")){
-				$event->setCancelled(true);
-				$event->getPlayer()->onGround = true;
-			}
+            $event->setCancelled(true);
+            $event->getPlayer()->onGround = true;
 		}
 	}
 
